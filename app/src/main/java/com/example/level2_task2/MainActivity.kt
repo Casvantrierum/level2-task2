@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvQuestions.addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
 
 
-        // Populate the places list and notify the data set has changed.
+        // Populate the question list and notify the data set has changed.
         for (i in Question.QUESTION_QUESTION.indices) {
             questions.add(Question(Question.QUESTION_QUESTION[i], Question.QUESTION_ANSWER[i]))
         }
@@ -60,12 +60,12 @@ class MainActivity : AppCompatActivity() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
 
-                if (direction == ItemTouchHelper.LEFT && !Question.QUESTION_ANSWER[position]){
+                if (direction == ItemTouchHelper.LEFT && !questions[position].answer){
                     println("links en false dus correct")
                     questions.removeAt(position)
                 }
-                else if (direction == ItemTouchHelper.RIGHT && Question.QUESTION_ANSWER[position]){
-                    println("rechts en goed dus correct en false dus correct")
+                else if (direction == ItemTouchHelper.RIGHT && questions[position].answer){
+                    println("rechts en true dus correct")
                     questions.removeAt(position)
                 }
                 else{

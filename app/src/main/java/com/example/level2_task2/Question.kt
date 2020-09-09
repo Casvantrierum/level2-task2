@@ -6,15 +6,17 @@ data class Question(
 ) {
     companion object {
         val QUESTION_QUESTION = arrayOf(
-            "vraag1",
-            "vraag2",
-            "vraag3"
+            "vraag1T",
+            "vraag2T",
+            "vraag3F",
+            "vraag4F"
 
         )
         val QUESTION_ANSWER = arrayOf(
             true,
+            true,
             false,
-            true
+            false
         )
     }
 }

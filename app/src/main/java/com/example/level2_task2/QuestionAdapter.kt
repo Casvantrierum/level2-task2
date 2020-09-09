@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.level2_task2.databinding.ItemQuestionBinding
 
-class QuestionAdapter (private val places: List<Question>) :
+class QuestionAdapter (private val question: List<Question>) :
     RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,12 +31,12 @@ class QuestionAdapter (private val places: List<Question>) :
      * Returns the size of the list
      */
     override fun getItemCount(): Int {
-        return places.size
+        return question.size
     }
     /**
      * Called by RecyclerView to display the data at the specified position.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.databind(places[position])
+        holder.databind(question[position])
     }
 }

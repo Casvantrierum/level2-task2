@@ -62,19 +62,26 @@ class MainActivity : AppCompatActivity() {
 
                 if (direction == ItemTouchHelper.LEFT && !questions[position].answer){
                     println("links en false dus correct")
-                    questions.removeAt(position)
+                    removeQuestion(position)
                 }
                 else if (direction == ItemTouchHelper.RIGHT && questions[position].answer){
                     println("rechts en true dus correct")
-                    questions.removeAt(position)
+                    removeQuestion(position)
                 }
                 else{
-                    Snackbar.make(rvQuestions,"WRONG!", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(rvQuestions,applicationContext.getString(R.string.incorrect), Snackbar.LENGTH_SHORT).show()
                 }
                 questionAdapter.notifyDataSetChanged()
             }
         }
         return ItemTouchHelper(callback)
+    }
+
+    private fun removeQuestion(position : Int) {
+        questions.removeAt(position)
+        if (questions.size == 0 ){
+            Snackbar.make(rvQuestions,applicationContext.getString(R.string.done), Snackbar.LENGTH_SHORT).show()
+        }
     }
 
 }

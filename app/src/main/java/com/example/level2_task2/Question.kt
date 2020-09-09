@@ -6,17 +6,17 @@ data class Question(
 ) {
     companion object {
         val QUESTION_QUESTION = arrayOf(
-            "vraag1T",
-            "vraag2T",
-            "vraag3F",
-            "vraag4F"
+            "A \"val\" and \"val\"  are the same.",
+            "Mobile Application Development grants 12 ECTS.",
+            "A unit in Kotlin corresponds to a void in Java.",
+            "In Kotlin 'when' replaces the 'switch' operator in Java."
 
         )
         val QUESTION_ANSWER = arrayOf(
-            true,
-            true,
             false,
-            false
+            false,
+            true,
+            true
         )
     }
 }

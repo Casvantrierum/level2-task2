@@ -61,11 +61,9 @@ class MainActivity : AppCompatActivity() {
                 val position = viewHolder.adapterPosition
 
                 if (direction == ItemTouchHelper.LEFT && !questions[position].answer){
-                    println("links en false dus correct")
                     removeQuestion(position)
                 }
                 else if (direction == ItemTouchHelper.RIGHT && questions[position].answer){
-                    println("rechts en true dus correct")
                     removeQuestion(position)
                 }
                 else{
